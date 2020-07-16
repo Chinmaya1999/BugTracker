@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p>Are you sure you want to delete project "{{ project.name }}"</p>
+	<a href="{% url 'projectReport' %}">Cancel<a>
+		<form method="POST" action="">
+			{% csrf_token %}
+			<input type="submit" name="confirm" value="submit">
+			
+		</form>
+
+</body>
+</html>

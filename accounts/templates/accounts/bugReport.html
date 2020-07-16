@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Project Report</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+		
+		.btn-danger{
+		background-color: #ffae19;
+		border-color: #e59400;
+	}
+	</style>
+
+</head>
+<body>
+
+	<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Bug name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Priority</th>
+      <th scope="col">Operations</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in bugs %}
+    <tr scope="row">
+      <td>
+      	{{i.id}}
+      </td>
+      <td>
+      	{{i.name}}
+      </td>
+      <td>
+      	{{i.bug_description}}
+      </td>
+       <td>
+        {{i.priority}}
+      </td>
+      <td>
+      	<a href="{% url 'updateBug' i.id %}">update</a>
+      		<pr>/<pr>
+      		<a href="{% url 'deleteBug' i.id %}">delete</a>
+      </td>
+
+    {% endfor %}
+    
+  </tbody>
+</table>

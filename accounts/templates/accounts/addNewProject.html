@@ -1,0 +1,163 @@
+{%  extends 'accounts/main_template.html' %}
+
+{% block content %}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+	form{
+		background-color: #7abecc !important;
+	}
+
+	body{
+		background-color: #7abecc !important;
+	}
+
+	input{
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		box-sizing: border-box;
+	}
+
+	input::placeholder {
+	  color: #d3d3d3;
+	}
+
+	.submit{
+		background-color: #6BA3E8;
+	}
+
+	.center-column{
+		width:600px;
+		margin: 40px auto;
+		padding:40px;
+		background-color: #fff;
+		border-radius: 10px;
+		box-shadow: 6px 2px 30px 0px rgba(0,0,0,0.75);
+		
+	}
+
+	.item-row{
+		background-color: #906abd;
+		margin: 10px;
+		padding: 20px;
+		border-radius: 3px;
+		color: #fff;
+		font-size: 16px;
+		box-shadow: 0px -1px 10px -4px rgba(0,0,0,0.75);
+	}
+
+	.btn-danger{
+		background-color: #ffae19;
+		border-color: #e59400;
+	}
+	 .hello-msg{
+    font-size: 18px;
+    color: #fff;
+    margin-right: 20px;
+  }
+</style>
+<body>
+	<form class="form-horizontal" method="POST" action="" >
+
+		{% csrf_token %}
+		<div class="center-column">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Add new Project</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="project_name">Project name</label>  
+  <div class="col-md-4">
+  <input id="project_name" name="project_name" type="text" placeholder="Project name..." class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="project_type">Project type</label>
+  <div class="col-md-4">
+    <select id="project_type" name="project_type" class="form-control">
+      <option value="Maintanace">Maintanace</option>
+      <option value="Security">Security</option>
+      <option value="Research">Research</option>
+    </select>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="manager">Manager</label>  
+  <div class="col-md-4">
+  <input id="manager" name="manager" type="text" placeholder="manager..." class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="frontend">Frontend</label>  
+  <div class="col-md-4">
+  <input id="frontend" name="frontend" type="text" placeholder="Frontend" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="backend">Backend</label>  
+  <div class="col-md-4">
+  <input id="backend" name="backend" type="text" placeholder="Backend..." class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="client">Client name</label>  
+  <div class="col-md-4">
+  <input id="client" name="client" type="text" placeholder="Client name..." class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="description">Description</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" id="description" name="description">
+</textarea>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="client">Start date</label>  
+  <div class="col-md-4">
+  <input id="startDate" name="startDate" type="datetime-local" class="form-control input-md">
+    
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="client">Due date</label>  
+  <div class="col-md-4">
+  <input id="dueDate" name="dueDate" type="datetime-local" class="form-control input-md">
+    
+  </div>
+</div>
+<div class="col-md-4">
+<span class="submit"><input type="submit" name="submit" value="submit"></span>
+</div>
+</br>
+</br>
+
+</fieldset>
+</div>
+</form>
+</body>
+
+{% endblock %}
